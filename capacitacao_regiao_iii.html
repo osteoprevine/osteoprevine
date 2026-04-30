@@ -3,30 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Registro de Capacitação — OsteoPrevine Região III</title>
+<title>Capacitação OsteoPrevine — Região III</title>
 <style>
-*{{box-sizing:border-box;margin:0;padding:0}}
-body{{font-family:Arial,sans-serif;background:#f0f4f8;min-height:100vh;padding:16px}}
-.wrap{{max-width:600px;margin:0 auto}}
-.header{{background:#1a5276;color:#fff;border-radius:12px 12px 0 0;padding:18px 20px}}
-.header h1{{font-size:17px;font-weight:600}}
-.header p{{font-size:13px;color:rgba(255,255,255,0.8);margin-top:4px}}
-.card{{background:#fff;border:1px solid #dde3ea;padding:18px 20px;margin-top:12px;border-radius:12px}}
-.label{{font-size:13px;font-weight:600;color:#222;margin-bottom:6px;display:block}}
-.label span{{color:#c0392b;margin-left:2px}}
-input[type=text],input[type=number],input[type=date]{{width:100%;padding:10px 12px;border:1px solid #ccd3db;border-radius:8px;font-size:14px;color:#222;background:#fff;outline:none}}
-input[type=text]:focus,input[type=number]:focus,input[type=date]:focus{{border-color:#2980b9}}
-.field{{margin-bottom:14px}}
-.field:last-child{{margin-bottom:0}}
-.checkbox-group{{display:flex;flex-direction:column;gap:10px}}
-.checkbox-group label{{display:flex;align-items:center;gap:8px;font-size:14px;color:#222;cursor:pointer}}
-.submit-btn{{width:100%;padding:13px;background:#1a5276;color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;margin-top:16px;display:flex;align-items:center;justify-content:center;gap:8px}}
-.submit-btn:hover{{background:#154360}}
-.submit-btn:disabled{{background:#95a5a6;cursor:not-allowed}}
-.spinner{{width:16px;height:16px;border:2px solid rgba(255,255,255,0.3);border-top-color:#fff;border-radius:50%;animation:spin 0.7s linear infinite;display:none}}
-@keyframes spin{{to{{transform:rotate(360deg)}}}}
-.success{{background:#d5f5e3;border:1px solid #27ae60;border-radius:12px;padding:20px;text-align:center;color:#1e8449;font-size:14px;margin-top:12px;display:none}}
-.error{{background:#fadbd8;border:1px solid #e74c3c;border-radius:12px;padding:14px;text-align:center;color:#c0392b;font-size:13px;margin-top:12px;display:none}}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; background: #f0f4f8; min-height: 100vh; padding: 16px; }
+.wrap { max-width: 600px; margin: 0 auto; }
+.header { background: #1a5276; color: #fff; border-radius: 12px 12px 0 0; padding: 18px 20px; }
+.header h1 { font-size: 17px; font-weight: 600; }
+.header p { font-size: 13px; color: rgba(255,255,255,0.8); margin-top: 4px; }
+.card { background: #fff; border: 1px solid #dde3ea; padding: 18px 20px; margin-top: 12px; border-radius: 12px; }
+.label { font-size: 13px; font-weight: 600; color: #222; margin-bottom: 6px; display: block; }
+.req { color: #c0392b; margin-left: 2px; }
+input[type=text], input[type=number], input[type=date] { width: 100%; padding: 10px 12px; border: 1px solid #ccd3db; border-radius: 8px; font-size: 14px; color: #222; background: #fff; outline: none; }
+input[type=text]:focus, input[type=number]:focus, input[type=date]:focus { border-color: #2980b9; }
+.field { margin-bottom: 14px; }
+.field:last-child { margin-bottom: 0; }
+.checkbox-group { display: flex; flex-direction: column; gap: 10px; }
+.checkbox-group label { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #222; cursor: pointer; }
+.submit-btn { width: 100%; padding: 13px; background: #1a5276; color: #fff; border: none; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; margin-top: 16px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.submit-btn:hover { background: #154360; }
+.submit-btn:disabled { background: #95a5a6; cursor: not-allowed; }
+.spinner { width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3); border-top-color: #fff; border-radius: 50%; animation: spin 0.7s linear infinite; display: none; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.success { background: #d5f5e3; border: 1px solid #27ae60; border-radius: 12px; padding: 20px; text-align: center; color: #1e8449; font-size: 14px; margin-top: 12px; display: none; }
+.error { background: #fadbd8; border: 1px solid #e74c3c; border-radius: 12px; padding: 14px; text-align: center; color: #c0392b; font-size: 13px; margin-top: 12px; display: none; }
 </style>
 </head>
 <body>
@@ -37,23 +37,23 @@ input[type=text]:focus,input[type=number]:focus,input[type=date]:focus{{border-c
   </div>
   <div class="card">
     <div class="field">
-      <label class="label">Equipe de Saúde Capacitada<span>*</span></label>
+      <label class="label">Equipe de Saúde Capacitada<span class="req">*</span></label>
       <input type="text" id="equipe" placeholder="Nome da equipe">
     </div>
     <div class="field">
-      <label class="label">Responsável pela capacitação<span>*</span></label>
+      <label class="label">Responsável pela capacitação<span class="req">*</span></label>
       <input type="text" id="responsavel" placeholder="Nome completo">
     </div>
     <div class="field">
-      <label class="label">Data da capacitação<span>*</span></label>
+      <label class="label">Data da capacitação<span class="req">*</span></label>
       <input type="date" id="data">
     </div>
     <div class="field">
-      <label class="label">Número de participantes<span>*</span></label>
+      <label class="label">Número de participantes<span class="req">*</span></label>
       <input type="number" id="participantes" min="0" placeholder="0">
     </div>
     <div class="field" style="margin-bottom:0">
-      <label class="label">Quais profissionais foram capacitados?<span>*</span></label>
+      <label class="label">Quais profissionais foram capacitados?<span class="req">*</span></label>
       <div class="checkbox-group">
         <label><input type="checkbox" value="ACS/TACS"> ACS/TACS</label>
         <label><input type="checkbox" value="Técnico de Enfermagem"> Técnico de Enfermagem</label>
@@ -69,68 +69,65 @@ input[type=text]:focus,input[type=number]:focus,input[type=date]:focus{{border-c
   </button>
   <div class="error" id="erro">Erro ao enviar. Verifique sua conexão e tente novamente.</div>
   <div class="success" id="ok">
-    <div style="font-size:36px;margin-bottom:8px">✓</div>
+    <div style="font-size:36px;margin-bottom:8px">&#10003;</div>
     <div style="font-weight:600;font-size:16px">Registro enviado com sucesso!</div>
     <div style="margin-top:6px">Os dados foram salvos na planilha.</div>
     <button onclick="novo()" style="margin-top:14px;padding:9px 24px;background:#27ae60;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:14px;font-weight:600">Novo registro</button>
   </div>
 </div>
 <script>
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzYsig15GnTaFunNfq9llLnoWZI6jXKvngJKWLBy0ehNVDa1yzQUHvTDRuXnNSJIqFSCQ/exec";
+var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzYsig15GnTaFunNfq9llLnoWZI6jXKvngJKWLBy0ehNVDa1yzQUHvTDRuXnNSJIqFSCQ/exec";
 
-async function enviar(){{
-  const equipe = document.getElementById('equipe').value.trim();
-  const responsavel = document.getElementById('responsavel').value.trim();
-  const data = document.getElementById('data').value;
-  const participantes = document.getElementById('participantes').value;
-  const checks = [...document.querySelectorAll('.checkbox-group input:checked')].map(c => c.value);
-  if(!equipe || !responsavel || !data || !participantes){{
-    alert('Preencha todos os campos obrigatórios.'); return;
-  }}
-  if(checks.length === 0){{
-    alert('Selecione ao menos um profissional capacitado.'); return;
-  }}
-  const btn = document.getElementById('submitBtn');
-  const txt = document.getElementById('submitTxt');
-  const spin = document.getElementById('spinner');
-  const erro = document.getElementById('erro');
-  erro.style.display = 'none';
+function enviar() {
+  var equipe = document.getElementById('equipe').value.trim();
+  var responsavel = document.getElementById('responsavel').value.trim();
+  var data = document.getElementById('data').value;
+  var participantes = document.getElementById('participantes').value;
+  var checkboxes = document.querySelectorAll('.checkbox-group input:checked');
+  var checks = [];
+  for (var i = 0; i < checkboxes.length; i++) { checks.push(checkboxes[i].value); }
+  if (!equipe || !responsavel || !data || !participantes) { alert('Preencha todos os campos obrigatórios.'); return; }
+  if (checks.length === 0) { alert('Selecione ao menos um profissional capacitado.'); return; }
+  var btn = document.getElementById('submitBtn');
+  var txt = document.getElementById('submitTxt');
+  var spin = document.getElementById('spinner');
+  document.getElementById('erro').style.display = 'none';
   btn.disabled = true;
   txt.textContent = 'Enviando...';
   spin.style.display = 'block';
-  const [ano, mes, dia] = data.split('-');
-  const dataFormatada = `${{dia}}/${{mes}}/${{ano}}`;
-  try {{
-    await fetch(SCRIPT_URL, {{
-      method: 'POST',
-      mode: 'no-cors',
-      headers: {{'Content-Type': 'application/json'}},
-      body: JSON.stringify({{tipo: 'capacitacao', equipe, responsavel, data: dataFormatada, participantes, profissionais: checks.join(', ')}})
-    }});
+  var parts = data.split('-');
+  var dataFormatada = parts[2] + '/' + parts[1] + '/' + parts[0];
+  fetch(SCRIPT_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({tipo: 'capacitacao', equipe: equipe, responsavel: responsavel, data: dataFormatada, participantes: participantes, profissionais: checks.join(', ')})
+  }).then(function() {
     document.getElementById('ok').style.display = 'block';
     btn.style.display = 'none';
-  }} catch(e) {{
-    erro.style.display = 'block';
+  }).catch(function() {
+    document.getElementById('erro').style.display = 'block';
     btn.disabled = false;
     txt.textContent = 'Enviar registro';
     spin.style.display = 'none';
-  }}
-}}
+  });
+}
 
-function novo(){{
+function novo() {
   document.getElementById('equipe').value = '';
   document.getElementById('responsavel').value = '';
   document.getElementById('data').value = '';
   document.getElementById('participantes').value = '';
-  document.querySelectorAll('.checkbox-group input').forEach(c => c.checked = false);
+  var checkboxes = document.querySelectorAll('.checkbox-group input');
+  for (var i = 0; i < checkboxes.length; i++) { checkboxes[i].checked = false; }
   document.getElementById('ok').style.display = 'none';
   document.getElementById('erro').style.display = 'none';
-  const btn = document.getElementById('submitBtn');
+  var btn = document.getElementById('submitBtn');
   btn.style.display = 'flex';
   btn.disabled = false;
   document.getElementById('submitTxt').textContent = 'Enviar registro';
   document.getElementById('spinner').style.display = 'none';
-}}
+}
 </script>
 </body>
 </html>

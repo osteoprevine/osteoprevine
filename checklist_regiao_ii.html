@@ -3,38 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Registro de Aplicação — Checklist OsteoPrevine Região II</title>
+<title>Checklist OsteoPrevine — Região II</title>
 <style>
-*{{box-sizing:border-box;margin:0;padding:0}}
-body{{font-family:Arial,sans-serif;background:#f0f4f8;min-height:100vh;padding:16px}}
-.wrap{{max-width:600px;margin:0 auto}}
-.header{{background:#1a5276;color:#fff;border-radius:12px 12px 0 0;padding:18px 20px}}
-.header h1{{font-size:17px;font-weight:600}}
-.header p{{font-size:13px;color:rgba(255,255,255,0.8);margin-top:4px}}
-.card{{background:#fff;border:1px solid #dde3ea;padding:18px 20px;margin-top:12px;border-radius:12px}}
-.label{{font-size:13px;font-weight:600;color:#222;margin-bottom:6px;display:block}}
-.label span{{color:#c0392b;margin-left:2px}}
-input[type=text],input[type=number],select{{width:100%;padding:10px 12px;border:1px solid #ccd3db;border-radius:8px;font-size:14px;color:#222;background:#fff;outline:none}}
-input[type=text]:focus,input[type=number]:focus,select:focus{{border-color:#2980b9}}
-.prof-block{{background:#f7f9fc;border:1px solid #dde3ea;border-radius:12px;padding:14px 16px;margin-bottom:12px;position:relative}}
-.prof-title{{font-size:13px;font-weight:600;color:#1a5276;margin-bottom:12px}}
-.remove-btn{{position:absolute;top:10px;right:12px;background:none;border:none;cursor:pointer;color:#999;font-size:20px;line-height:1;padding:0}}
-.remove-btn:hover{{color:#c0392b}}
-.field{{margin-bottom:12px}}
-.field:last-child{{margin-bottom:0}}
-.row{{display:grid;grid-template-columns:1fr 1fr;gap:12px}}
-.add-btn{{width:100%;padding:11px;border:2px dashed #b0bec5;border-radius:8px;background:none;color:#2980b9;font-size:14px;cursor:pointer;margin-top:4px}}
-.add-btn:hover{{background:#eaf4fb}}
-.submit-btn{{width:100%;padding:13px;background:#1a5276;color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;margin-top:16px;display:flex;align-items:center;justify-content:center;gap:8px}}
-.submit-btn:hover{{background:#154360}}
-.submit-btn:disabled{{background:#95a5a6;cursor:not-allowed}}
-.spinner{{width:16px;height:16px;border:2px solid rgba(255,255,255,0.3);border-top-color:#fff;border-radius:50%;animation:spin 0.7s linear infinite;display:none}}
-@keyframes spin{{to{{transform:rotate(360deg)}}}}
-.success{{background:#d5f5e3;border:1px solid #27ae60;border-radius:12px;padding:20px;text-align:center;color:#1e8449;font-size:14px;margin-top:12px;display:none}}
-.error{{background:#fadbd8;border:1px solid #e74c3c;border-radius:12px;padding:14px;text-align:center;color:#c0392b;font-size:13px;margin-top:12px;display:none}}
-.radio-group{{display:flex;gap:20px}}
-.radio-group label{{display:flex;align-items:center;gap:6px;font-size:14px;color:#222;cursor:pointer}}
-@media(max-width:480px){{.row{{grid-template-columns:1fr}}}}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; background: #f0f4f8; min-height: 100vh; padding: 16px; }
+.wrap { max-width: 600px; margin: 0 auto; }
+.header { background: #1a5276; color: #fff; border-radius: 12px 12px 0 0; padding: 18px 20px; }
+.header h1 { font-size: 17px; font-weight: 600; }
+.header p { font-size: 13px; color: rgba(255,255,255,0.8); margin-top: 4px; }
+.card { background: #fff; border: 1px solid #dde3ea; padding: 18px 20px; margin-top: 12px; border-radius: 12px; }
+.label { font-size: 13px; font-weight: 600; color: #222; margin-bottom: 6px; display: block; }
+.req { color: #c0392b; margin-left: 2px; }
+input[type=text], input[type=number], select { width: 100%; padding: 10px 12px; border: 1px solid #ccd3db; border-radius: 8px; font-size: 14px; color: #222; background: #fff; outline: none; }
+input[type=text]:focus, input[type=number]:focus, select:focus { border-color: #2980b9; }
+.prof-block { background: #f7f9fc; border: 1px solid #dde3ea; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; position: relative; margin-top: 12px; }
+.prof-title { font-size: 13px; font-weight: 600; color: #1a5276; margin-bottom: 12px; }
+.remove-btn { position: absolute; top: 10px; right: 12px; background: none; border: none; cursor: pointer; color: #999; font-size: 20px; line-height: 1; padding: 0; }
+.remove-btn:hover { color: #c0392b; }
+.field { margin-bottom: 12px; }
+.field:last-child { margin-bottom: 0; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.add-btn { width: 100%; padding: 11px; border: 2px dashed #b0bec5; border-radius: 8px; background: none; color: #2980b9; font-size: 14px; cursor: pointer; margin-top: 12px; }
+.add-btn:hover { background: #eaf4fb; }
+.submit-btn { width: 100%; padding: 13px; background: #1a5276; color: #fff; border: none; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; margin-top: 16px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.submit-btn:hover { background: #154360; }
+.submit-btn:disabled { background: #95a5a6; cursor: not-allowed; }
+.spinner { width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3); border-top-color: #fff; border-radius: 50%; animation: spin 0.7s linear infinite; display: none; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.success { background: #d5f5e3; border: 1px solid #27ae60; border-radius: 12px; padding: 20px; text-align: center; color: #1e8449; font-size: 14px; margin-top: 12px; display: none; }
+.error { background: #fadbd8; border: 1px solid #e74c3c; border-radius: 12px; padding: 14px; text-align: center; color: #c0392b; font-size: 13px; margin-top: 12px; display: none; }
+.radio-group { display: flex; gap: 20px; }
+.radio-group label { display: flex; align-items: center; gap: 6px; font-size: 14px; color: #222; cursor: pointer; }
+@media(max-width: 480px) { .row { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -45,11 +45,11 @@ input[type=text]:focus,input[type=number]:focus,select:focus{{border-color:#2980
   </div>
   <div class="card">
     <div class="field">
-      <label class="label">Equipe de saúde<span>*</span></label>
+      <label class="label">Equipe de saúde<span class="req">*</span></label>
       <input type="text" id="equipe" placeholder="Nome da equipe">
     </div>
     <div class="field" style="margin-bottom:0">
-      <label class="label">Nome de quem está preenchendo<span>*</span></label>
+      <label class="label">Nome de quem está preenchendo<span class="req">*</span></label>
       <input type="text" id="resp" placeholder="Seu nome completo">
     </div>
   </div>
@@ -61,137 +61,116 @@ input[type=text]:focus,input[type=number]:focus,select:focus{{border-color:#2980
   </button>
   <div class="error" id="erro">Erro ao enviar. Verifique sua conexão e tente novamente.</div>
   <div class="success" id="ok">
-    <div style="font-size:36px;margin-bottom:8px">✓</div>
+    <div style="font-size:36px;margin-bottom:8px">&#10003;</div>
     <div style="font-weight:600;font-size:16px">Registros enviados com sucesso!</div>
     <div style="margin-top:6px">Os dados foram salvos na planilha.</div>
     <button onclick="novo()" style="margin-top:14px;padding:9px 24px;background:#27ae60;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:14px;font-weight:600">Novo preenchimento</button>
   </div>
 </div>
 <script>
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw7wSa1DX96a5VxirOykvbSIxJNM9knD09QqfTAi2kidkFaepKjc7PIs36y0D-KzC8-/exec";
-let count = 0;
-const cats = ['ACS/TACS','Técnico de Enfermagem','Fisioterapeuta','Nutricionista','Enfermeiro(a)','Médico(a)'];
+var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw7wSa1DX96a5VxirOykvbSIxJNM9knD09QqfTAi2kidkFaepKjc7PIs36y0D-KzC8-/exec";
+var count = 0;
+var cats = ['ACS/TACS','T\u00e9cnico de Enfermagem','Fisioterapeuta','Nutricionista','Enfermeiro(a)','M\u00e9dico(a)'];
 
-function addProf(){{
+function addProf() {
   count++;
-  const id = count;
-  const div = document.createElement('div');
+  var id = count;
+  var div = document.createElement('div');
   div.className = 'prof-block';
   div.id = 'p' + id;
-  div.innerHTML = `
-    <div class="prof-title">Profissional ${{id}}</div>
-    ${{count > 1 ? `<button class="remove-btn" onclick="remProf(${{id}})" title="Remover">×</button>` : ''}}
-    <div class="field">
-      <label class="label">Nome do profissional<span>*</span></label>
-      <input type="text" id="nm${{id}}" placeholder="Nome completo">
-    </div>
-    <div class="row">
-      <div class="field">
-        <label class="label">Categoria profissional<span>*</span></label>
-        <select id="cat${{id}}">
-          <option value="">Selecione</option>
-          ${{cats.map(c => `<option>${{c}}</option>`).join('')}}
-        </select>
-      </div>
-      <div class="field">
-        <label class="label">Local da aplicação<span>*</span></label>
-        <select id="loc${{id}}">
-          <option value="">Selecione</option>
-          <option>Domicílio</option>
-          <option>Unidade de saúde</option>
-        </select>
-      </div>
-    </div>
-    <div class="field">
-      <label class="label">Nº de questionários aplicados<span>*</span></label>
-      <input type="number" id="nq${{id}}" min="0" placeholder="0">
-    </div>
-    <div class="field">
-      <label class="label">Meta atingida?<span>*</span></label>
-      <div class="radio-group">
-        <label><input type="radio" name="meta${{id}}" value="Sim"> Sim</label>
-        <label><input type="radio" name="meta${{id}}" value="Não"> Não</label>
-      </div>
-    </div>
-  `;
+  var removeBtn = count > 1 ? '<button class="remove-btn" onclick="remProf(' + id + ')" title="Remover">&#215;</button>' : '';
+  var opts = cats.map(function(c) { return '<option>' + c + '</option>'; }).join('');
+  div.innerHTML = '<div class="prof-title">Profissional ' + id + '</div>' + removeBtn +
+    '<div class="field"><label class="label">Nome do profissional<span class="req">*</span></label>' +
+    '<input type="text" id="nm' + id + '" placeholder="Nome completo"></div>' +
+    '<div class="row">' +
+    '<div class="field"><label class="label">Categoria profissional<span class="req">*</span></label>' +
+    '<select id="cat' + id + '"><option value="">Selecione</option>' + opts + '</select></div>' +
+    '<div class="field"><label class="label">Local da aplica\u00e7\u00e3o<span class="req">*</span></label>' +
+    '<select id="loc' + id + '"><option value="">Selecione</option><option>Domic\u00edlio</option><option>Unidade de sa\u00fade</option></select></div></div>' +
+    '<div class="field"><label class="label">N\u00ba de question\u00e1rios aplicados<span class="req">*</span></label>' +
+    '<input type="number" id="nq' + id + '" min="0" placeholder="0"></div>' +
+    '<div class="field"><label class="label">Meta atingida?<span class="req">*</span></label>' +
+    '<div class="radio-group"><label><input type="radio" name="meta' + id + '" value="Sim"> Sim</label>' +
+    '<label><input type="radio" name="meta' + id + '" value="N\u00e3o"> N\u00e3o</label></div></div>';
   document.getElementById('profs').appendChild(div);
   renumerar();
-}}
+}
 
-function remProf(id){{
+function remProf(id) {
   document.getElementById('p' + id).remove();
   renumerar();
-}}
+}
 
-function renumerar(){{
-  document.querySelectorAll('.prof-block').forEach((b, i) => {{
-    b.querySelector('.prof-title').textContent = 'Profissional ' + (i + 1);
-  }});
-}}
+function renumerar() {
+  var blocos = document.querySelectorAll('.prof-block');
+  for (var i = 0; i < blocos.length; i++) {
+    blocos[i].querySelector('.prof-title').textContent = 'Profissional ' + (i + 1);
+  }
+}
 
-async function enviar(){{
-  const equipe = document.getElementById('equipe').value.trim();
-  const resp = document.getElementById('resp').value.trim();
-  if(!equipe || !resp){{ alert('Preencha a equipe e seu nome.'); return; }}
-  const blocos = document.querySelectorAll('.prof-block');
-  if(blocos.length === 0){{ alert('Adicione ao menos um profissional.'); return; }}
-  let dados = [];
-  let ok = true;
-  blocos.forEach((b, i) => {{
-    const id = b.id.replace('p','');
-    const nm = document.getElementById('nm' + id)?.value.trim();
-    const cat = document.getElementById('cat' + id)?.value;
-    const loc = document.getElementById('loc' + id)?.value;
-    const nq = document.getElementById('nq' + id)?.value;
-    const meta = document.querySelector(`input[name="meta${{id}}"]:checked`)?.value;
-    if(!nm || !cat || !loc || !nq || !meta){{
-      alert(`Preencha todos os campos do profissional ${{i + 1}}.`);
-      ok = false; return;
-    }}
-    dados.push({{equipe, responsavel: resp, nome: nm, categoria: cat, local: loc, questionarios: nq, meta}});
-  }});
-  if(!ok) return;
-  const btn = document.getElementById('submitBtn');
-  const txt = document.getElementById('submitTxt');
-  const spin = document.getElementById('spinner');
-  const erro = document.getElementById('erro');
-  erro.style.display = 'none';
+function enviar() {
+  var equipe = document.getElementById('equipe').value.trim();
+  var resp = document.getElementById('resp').value.trim();
+  if (!equipe || !resp) { alert('Preencha a equipe e seu nome.'); return; }
+  var blocos = document.querySelectorAll('.prof-block');
+  if (blocos.length === 0) { alert('Adicione ao menos um profissional.'); return; }
+  var dados = [];
+  var ok = true;
+  for (var i = 0; i < blocos.length; i++) {
+    var id = blocos[i].id.replace('p', '');
+    var nm = document.getElementById('nm' + id).value.trim();
+    var cat = document.getElementById('cat' + id).value;
+    var loc = document.getElementById('loc' + id).value;
+    var nq = document.getElementById('nq' + id).value;
+    var metaEl = document.querySelector('input[name="meta' + id + '"]:checked');
+    var meta = metaEl ? metaEl.value : '';
+    if (!nm || !cat || !loc || !nq || !meta) {
+      alert('Preencha todos os campos do profissional ' + (i + 1) + '.');
+      ok = false; break;
+    }
+    dados.push({equipe: equipe, responsavel: resp, nome: nm, categoria: cat, local: loc, questionarios: nq, meta: meta});
+  }
+  if (!ok) return;
+  var btn = document.getElementById('submitBtn');
+  var txt = document.getElementById('submitTxt');
+  var spin = document.getElementById('spinner');
+  document.getElementById('erro').style.display = 'none';
   btn.disabled = true;
   txt.textContent = 'Enviando...';
   spin.style.display = 'block';
-  try {{
-    await fetch(SCRIPT_URL, {{
-      method: 'POST',
-      mode: 'no-cors',
-      headers: {{'Content-Type': 'application/json'}},
-      body: JSON.stringify({{tipo: 'checklist', registros: dados}})
-    }});
+  fetch(SCRIPT_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({tipo: 'checklist', registros: dados})
+  }).then(function() {
     document.getElementById('ok').style.display = 'block';
     btn.style.display = 'none';
     document.querySelector('.add-btn').style.display = 'none';
-  }} catch(e) {{
-    erro.style.display = 'block';
+  }).catch(function() {
+    document.getElementById('erro').style.display = 'block';
     btn.disabled = false;
     txt.textContent = 'Enviar registros';
     spin.style.display = 'none';
-  }}
-}}
+  });
+}
 
-function novo(){{
+function novo() {
   document.getElementById('equipe').value = '';
   document.getElementById('resp').value = '';
   document.getElementById('profs').innerHTML = '';
   count = 0;
   document.getElementById('ok').style.display = 'none';
   document.getElementById('erro').style.display = 'none';
-  const btn = document.getElementById('submitBtn');
+  var btn = document.getElementById('submitBtn');
   btn.style.display = 'flex';
   btn.disabled = false;
   document.getElementById('submitTxt').textContent = 'Enviar registros';
   document.getElementById('spinner').style.display = 'none';
   document.querySelector('.add-btn').style.display = 'block';
   addProf();
-}}
+}
 
 addProf();
 </script>
