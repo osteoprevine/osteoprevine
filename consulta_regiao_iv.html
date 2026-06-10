@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OsteoPrevine – Consulta | Região IV</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul: #1564C0;
+    --azul-claro: #3A9FFB;
+    --branco: #ffffff;
+    --cinza-fundo: #f0f4fa;
+    --cinza-borda: #d0dce8;
+    --verde: #2e7d32;
+    --vermelho: #c62828;
+    --texto: #1a2a3a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--cinza-fundo);
+    color: var(--texto);
+    min-height: 100vh;
+    padding: 24px 16px 48px;
+  }
+  .cabecalho {
+    background: linear-gradient(135deg, var(--azul) 0%, var(--azul-claro) 100%);
+    border-radius: 16px;
+    padding: 24px 28px;
+    color: white;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 16px rgba(21,100,192,0.25);
+  }
+  .cabecalho h1 { font-size: 1.5rem; font-weight: 800; letter-spacing: 0.5px; }
+  .cabecalho p { font-size: 0.95rem; opacity: 0.9; margin-top: 4px; }
+  .badge-regiao {
+    display: inline-block;
+    background: rgba(255,255,255,0.25);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .card {
+    background: white;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    margin-bottom: 20px;
+  }
+  .card h2 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--azul);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--cinza-fundo);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .campo { margin-bottom: 16px; }
+  .campo label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #4a5568;
+    margin-bottom: 6px;
+  }
+  .campo input, .campo select {
+    width: 100%;
+    padding: 11px 14px;
+    border: 2px solid var(--cinza-borda);
+    border-radius: 10px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    color: var(--texto);
+    background: white;
+    transition: border-color 0.2s;
+    appearance: none;
+  }
+  .campo input:focus, .campo select:focus {
+    outline: none;
+    border-color: var(--azul-claro);
+  }
+  .radio-group { display: flex; gap: 12px; margin-top: 4px; }
+  .radio-option {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 2px solid var(--cinza-borda);
+    border-radius: 10px;
+    padding: 11px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+  }
+  .radio-option input[type="radio"] { display: none; }
+  .radio-option.sim { color: var(--verde); }
+  .radio-option.nao { color: var(--vermelho); }
+  .radio-option.selecionado.sim { background: #e8f5e9; border-color: var(--verde); }
+  .radio-option.selecionado.nao { background: #ffebee; border-color: var(--vermelho); }
+  .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid var(--cinza-borda);
+    border-radius: 10px;
+    padding: 10px 14px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.92rem;
+    transition: all 0.2s;
+  }
+  .checkbox-option input[type="checkbox"] { display: none; }
+  .checkbox-option.selecionado {
+    background: #e3f0ff;
+    border-color: var(--azul-claro);
+    color: var(--azul);
+  }
+  .checkbox-box {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--cinza-borda);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s;
+    font-size: 0.8rem;
+  }
+  .checkbox-option.selecionado .checkbox-box {
+    background: var(--azul);
+    border-color: var(--azul);
+    color: white;
+  }
+  .paciente-card {
+    background: #f8faff;
+    border: 2px solid var(--cinza-borda);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .paciente-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .paciente-titulo {
+    font-weight: 800;
+    color: var(--azul);
+    font-size: 0.95rem;
+  }
+  .btn-remover {
+    background: #ffebee;
+    color: var(--vermelho);
+    border: none;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-remover:hover { background: #ffcdd2; }
+  .btn-adicionar {
+    width: 100%;
+    padding: 13px;
+    background: white;
+    color: var(--azul);
+    border: 2px dashed var(--azul-claro);
+    border-radius: 12px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: all 0.2s;
+  }
+  .btn-adicionar:hover { background: #e3f0ff; }
+  .btn-enviar {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, var(--azul) 0%, var(--azul-claro) 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(21,100,192,0.3);
+    transition: opacity 0.2s, transform 0.1s;
+  }
+  .btn-enviar:hover { opacity: 0.92; transform: translateY(-1px); }
+  .btn-enviar:disabled { opacity: 0.6; cursor: not-allowed; }
+  .mensagem {
+    display: none;
+    padding: 16px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-top: 16px;
+  }
+  .mensagem.sucesso { background: #e8f5e9; color: var(--verde); border: 2px solid #a5d6a7; }
+  .mensagem.erro { background: #ffebee; color: var(--vermelho); border: 2px solid #ef9a9a; }
+</style>
+</head>
+<body>
+
+<div class="cabecalho">
+  <h1>🦴 OsteoPrevine</h1>
+  <p>Registro de Consultas</p>
+  <span class="badge-regiao">Região IV</span>
+</div>
+
+<div class="card">
+  <h2>📋 Dados do Profissional</h2>
+
+  <div class="campo">
+    <label>Data</label>
+    <input type="date" id="data">
+  </div>
+  <div class="campo">
+    <label>Equipe de Saúde</label>
+    <input type="text" id="equipe" placeholder="Nome da equipe de saúde">
+  </div>
+  <div class="campo">
+    <label>Nome do Profissional</label>
+    <input type="text" id="profissional" placeholder="Nome completo">
+  </div>
+  <div class="campo">
+    <label>Categoria Profissional</label>
+    <select id="categoria">
+      <option value="">Selecione...</option>
+      <option>Enfermeiro(a)</option>
+      <option>Fisioterapeuta</option>
+      <option>Médico</option>
+      <option>Nutricionista</option>
+    </select>
+  </div>
+</div>
+
+<div class="card">
+  <h2>👥 Pacientes</h2>
+  <div id="lista-pacientes"></div>
+  <button class="btn-adicionar" onclick="adicionarPaciente()">+ Adicionar Paciente</button>
+</div>
+
+<button class="btn-enviar" onclick="enviar()">Enviar Registro</button>
+<div class="mensagem sucesso" id="msg-sucesso">✅ Registro enviado com sucesso!</div>
+<div class="mensagem erro" id="msg-erro">❌ Erro ao enviar. Verifique os campos e tente novamente.</div>
+
+<script>
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw9Tj08sU2eKnZ4uJQY-ofzRJ92YhJrWEjs2vnafFzTKRFWTuSEMOFyEipNHRv4WDrazQ/exec";
+  let contadorPaciente = 0;
+
+  function adicionarPaciente() {
+    contadorPaciente++;
+    const id = contadorPaciente;
+    const div = document.createElement('div');
+    div.className = 'paciente-card';
+    div.id = 'paciente-' + id;
+    div.innerHTML = `
+      <div class="paciente-header">
+        <span class="paciente-titulo">Paciente ${id}</span>
+        <button class="btn-remover" onclick="removerPaciente(${id})">✕ Remover</button>
+      </div>
+      <div class="campo">
+        <label>Nome do Paciente</label>
+        <input type="text" id="nome-${id}" placeholder="Nome completo">
+      </div>
+      <div class="campo">
+        <label>Hipótese Diagnóstica para Osteoporose?</label>
+        <div class="radio-group">
+          <label class="radio-option sim" id="hip-sim-${id}" onclick="selecionarRadio('hip', ${id}, 'sim')">
+            <input type="radio" name="hip-${id}" value="Sim"> ✅ Sim
+          </label>
+          <label class="radio-option nao" id="hip-nao-${id}" onclick="selecionarRadio('hip', ${id}, 'nao')">
+            <input type="radio" name="hip-${id}" value="Não"> ❌ Não
+          </label>
+        </div>
+      </div>
+      <div class="campo">
+        <label>Solicitado RX Torácica e Lombar AP/Perfil?</label>
+        <div class="radio-group">
+          <label class="radio-option sim" id="rx-sim-${id}" onclick="selecionarRadio('rx', ${id}, 'sim')">
+            <input type="radio" name="rx-${id}" value="Sim"> ✅ Sim
+          </label>
+          <label class="radio-option nao" id="rx-nao-${id}" onclick="selecionarRadio('rx', ${id}, 'nao')">
+            <input type="radio" name="rx-${id}" value="Não"> ❌ Não
+          </label>
+        </div>
+      </div>
+      <div class="campo">
+        <label>Encaminhamentos</label>
+        <div class="checkbox-group" id="enc-${id}">
+          <label class="checkbox-option" onclick="toggleCheck(this)">
+            <input type="checkbox" value="Fisioterapeuta">
+            <span class="checkbox-box"></span> Fisioterapeuta
+          </label>
+          <label class="checkbox-option" onclick="toggleCheck(this)">
+            <input type="checkbox" value="Nutricionista">
+            <span class="checkbox-box"></span> Nutricionista
+          </label>
+          <label class="checkbox-option" onclick="toggleCheck(this)">
+            <input type="checkbox" value="Atenção Especializada">
+            <span class="checkbox-box"></span> Atenção Especializada
+          </label>
+        </div>
+      </div>
+      <div class="campo">
+        <label>Registro no PEC?</label>
+        <div class="radio-group">
+          <label class="radio-option sim" id="pec-sim-${id}" onclick="selecionarRadio('pec', ${id}, 'sim')">
+            <input type="radio" name="pec-${id}" value="Sim"> ✅ Sim
+          </label>
+          <label class="radio-option nao" id="pec-nao-${id}" onclick="selecionarRadio('pec', ${id}, 'nao')">
+            <input type="radio" name="pec-${id}" value="Não"> ❌ Não
+          </label>
+        </div>
+      </div>
+    `;
+    document.getElementById('lista-pacientes').appendChild(div);
+  }
+
+  function removerPaciente(id) {
+    const el = document.getElementById('paciente-' + id);
+    if (el) el.remove();
+  }
+
+  function selecionarRadio(campo, id, opcao) {
+    document.getElementById(`${campo}-sim-${id}`).classList.toggle('selecionado', opcao === 'sim');
+    document.getElementById(`${campo}-nao-${id}`).classList.toggle('selecionado', opcao === 'nao');
+  }
+
+  function toggleCheck(label) {
+    label.classList.toggle('selecionado');
+    const cb = label.querySelector('input[type="checkbox"]');
+    cb.checked = !cb.checked;
+    const box = label.querySelector('.checkbox-box');
+    box.textContent = cb.checked ? '✓' : '';
+  }
+
+  function enviar() {
+    const data = document.getElementById('data').value;
+    const equipe = document.getElementById('equipe').value.trim();
+    const profissional = document.getElementById('profissional').value.trim();
+    const categoria = document.getElementById('categoria').value;
+
+    if (!data || !equipe || !profissional || !categoria) {
+      mostrarErro(); return;
+    }
+
+    const cards = document.querySelectorAll('.paciente-card');
+    if (cards.length === 0) { mostrarErro(); return; }
+
+    const pacientes = [];
+    for (const card of cards) {
+      const idMatch = card.id.match(/paciente-(\d+)/);
+      const id = idMatch[1];
+      const nome = document.getElementById(`nome-${id}`).value.trim();
+      const hip = document.querySelector(`input[name="hip-${id}"]:checked`);
+      const rx = document.querySelector(`input[name="rx-${id}"]:checked`);
+      const pec = document.querySelector(`input[name="pec-${id}"]:checked`);
+      const enc = [...card.querySelectorAll(`#enc-${id} input:checked`)].map(c => c.value).join(', ') || 'Nenhum';
+
+      if (!nome || !hip || !rx || !pec) { mostrarErro(); return; }
+
+      pacientes.push({ nome, hipotese: hip.value, rx: rx.value, encaminhamentos: enc, pec: pec.value });
+    }
+
+    const btn = document.querySelector('.btn-enviar');
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify({ tipo: "consulta", data, equipe, profissional, categoria, pacientes })
+    })
+    .then(r => r.json())
+    .then(() => {
+      document.getElementById('msg-sucesso').style.display = 'block';
+      document.getElementById('msg-erro').style.display = 'none';
+      document.getElementById('data').value = '';
+      document.getElementById('equipe').value = '';
+      document.getElementById('profissional').value = '';
+      document.getElementById('categoria').value = '';
+      document.getElementById('lista-pacientes').innerHTML = '';
+      contadorPaciente = 0;
+      setTimeout(() => document.getElementById('msg-sucesso').style.display = 'none', 4000);
+    })
+    .catch(() => mostrarErro())
+    .finally(() => { btn.disabled = false; btn.textContent = 'Enviar Registro'; });
+  }
+
+  function mostrarErro() {
+    document.getElementById('msg-erro').style.display = 'block';
+    document.getElementById('msg-sucesso').style.display = 'none';
+    setTimeout(() => document.getElementById('msg-erro').style.display = 'none', 3000);
+  }
+
+  // Adiciona primeiro paciente automaticamente
+  adicionarPaciente();
+</script>
+</body>
+</html>
